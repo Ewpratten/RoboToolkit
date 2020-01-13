@@ -5,3 +5,9 @@ allprojects {
         jcenter() 
     }
 }
+
+
+dependencies {
+    compile project(':greeting-library') 
+}
+

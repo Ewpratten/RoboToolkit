@@ -1,0 +1,18 @@
+Robot interface protocol
+
+Message types
+0x00 NONE
+0x01 Connection request 
+        Server should respond only with a UID for the device to use as it's controller ID. 
+        This controller id should be sent as the second arg of all other messages
+
+0x02 Disconnect request
+        A client -> server disconnect notice. Server should close the socket
+
+0x03 Heartbeat
+        Should be sent by the client no less than once every 25th of a second
+
+0x04 Init device
+        Request a hardware device to be set up on the server end 
+        Format: [0x04, CLIENT_UID, DEVICE_ID, DEVICE_DATA]
+
